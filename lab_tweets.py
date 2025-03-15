@@ -146,9 +146,9 @@ print(f'len(data)={len(data)}')
 
 
 import pprint
-pprint.pprint(data[0])
-
+#pprint.pprint(data[0])
 #print('text=', data[0]['text'])
+
 """
 trump_counts = 0
 obama_counts = 0
@@ -173,7 +173,10 @@ word_counts = {
     'fake news': 0,
 }
 for i, tweet in enumerate(data):
-    for word in word_counts:
-        if word in tweet['text'].lower():
-            word_counts[word] += 1
+    try:
+        for word in word_counts:
+            if word in tweet['text'].lower():
+                word_counts[word] += 1
+    except:
+        KeyError('idk')
 pprint.pprint(word_counts)
