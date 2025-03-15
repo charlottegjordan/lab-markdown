@@ -127,6 +127,14 @@ import json
 files = [
     'master_2009.json',
     'master_2010.json',
+    'master_2011.json',
+    'master_2012.json',
+    'master_2013.json',
+    'master_2014.json',
+    'master_2015.json',
+    'master_2016.json',
+    'master_2017.json',
+    'master_2018.json',
 ]
 data = []
 for file in files:
@@ -135,13 +143,14 @@ for file in files:
         #print(text)
         data += json.loads(text)
         #print(data)
-    print(f'len(data)={len(data)}')
+print(f'len(data)={len(data)}')
 
+"""
 import pprint
 #pprint.pprint(data[0])
 
 #print('text=', data[0]['text'])
-"""
+
 trump_counts = 0
 obama_counts = 0
 for i, tweet in enumerate(data):
@@ -154,7 +163,7 @@ for i, tweet in enumerate(data):
     #print(f"i={i}, text={tweet['text']}")
 print(f'trump_counts={trump_counts}')
 print(f'obama_counts={obama_counts}')
-"""
+
 
 word_counts = {
     'trump' : 0,
@@ -166,3 +175,4 @@ for i, tweet in enumerate(data):
         if word in tweet['text'].lower():
             word_counts[word] += 1
 pprint.pprint(word_counts)
+"""
