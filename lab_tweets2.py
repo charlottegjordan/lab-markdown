@@ -201,11 +201,11 @@ for i, tweet in enumerate(data):
 for word in word_percents:
     word_percents[word] = word_percents[word] / total_tweets
     word_percents[word] = word_percents[word] * 100
-#pprint.pprint(word_counts)
+pprint.pprint(word_counts)
 
 
 
-#PLOT MAKER
+#PLOT DEFINER
 terms = list(word_percents.keys())
 percents = list(word_percents.values())
 
@@ -214,11 +214,6 @@ sorted_percents = []
 for term in sorted(terms):
     sorted_terms.append(term)
     sorted_percents.append(word_percents[term])
-
-import matplotlib.pyplot as plt
-plt.bar(sorted_terms, sorted_percents)
-plt.show()
-plt.savefig('my_figure.png')
 
 
 
@@ -238,3 +233,11 @@ def percent_table(dict):
     for word in word_percents:
         print(f'| {word:<15} | {word_percents[word]:>5} |')
         print(separator)
+percent_table(word_percents)
+
+
+#PLOT MAKER
+import matplotlib.pyplot as plt
+plt.bar(sorted_terms, sorted_percents)
+plt.show()
+plt.savefig('percentgraph.png')
