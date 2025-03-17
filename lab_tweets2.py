@@ -123,18 +123,19 @@ There are two extra credit opportunities for this lab, worth one point each.
 2. If you make a plot of other interesting information in this dataset (that doesn't use the 'text' key).
     For example, you could plot: what time of day does Trump tweet most often? or what state does Trump tweet from most often?
 '''
+#OPEN FILES
 import json
 files = [
-    'master_2009.json',
-    'master_2010.json',
-    'master_2011.json',
-    'master_2012.json',
-    'master_2013.json',
-    'master_2014.json',
-    'master_2015.json',
-    'master_2016.json',
-    'master_2017.json',
-    'master_2018.json',
+    'condensed_2009.json',
+    'condensed_2010.json',
+    'condensed_2011.json',
+    'condensed_2012.json',
+    'condensed_2013.json',
+    'condensed_2014.json',
+    'condensed_2015.json',
+    'condensed_2016.json',
+    'condensed_2017.json',
+    'condensed_2018.json',
 ]
 data = []
 
@@ -165,18 +166,62 @@ print(f'trump_counts={trump_counts}')
 print(f'obama_counts={obama_counts}')
 """
 
+
+#WORD COUNTERS
 word_counts = {
     'obama': 0,
     'trump' : 0,
     'mexico': 0,
     'russia': 0,
     'fake news': 0,
+    'maga': 0,
+    'melania': 0,
+    'president': 0,
 }
+word_percents= {
+    'obama': 0,
+    'trump' : 0,
+    'mexico': 0,
+    'russia': 0,
+    'fake news': 0,
+    'maga': 0,
+    'melania': 0,
+    'president': 0,
+}
+total_tweets = len(data)
 for i, tweet in enumerate(data):
     try:
         for word in word_counts:
             if word in tweet['text'].lower():
                 word_counts[word] += 1
+                if word_counts[word] >= 1:
+                    word_percents[word] += 1
     except:
         KeyError('idk')
+for word in word_percents:
+    word_percents[word] = word_percents[word] / total_tweets
+    word_percents[word] = word_percents[word] * 100
 pprint.pprint(word_counts)
+
+
+
+#PLOT MAKER
+
+
+
+#TABLE MAKER
+header = f'| {'phrase':<15} | {'percent of tweets':>5} |'
+separator = "-" * 17 + "-" * 7
+def percent_table(dict):
+    for word in word_percents:
+        if word_percents[word] < 10:
+            word_percents[word] = f'{word_percents[word]:.2f}'
+            word_percents[word] = '0' + word_percents[word]
+        else:
+            word_percents[word] = f'{word_percents[word]:.2f}'
+    print(separator)
+    print(header)
+    print(separator)
+    for word in word_percents:
+        print(f'| {word:<15} | {word_percents[word]:>5} |')
+        print(separator)
