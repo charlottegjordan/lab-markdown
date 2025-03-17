@@ -227,12 +227,10 @@ def percent_table(dict):
             word_percents[word] = '0' + word_percents[word]
         else:
             word_percents[word] = f'{word_percents[word]:.2f}'
-    print(separator)
     print(header)
     print(separator)
     for word in word_percents:
         print(f'| {word:<15} | {word_percents[word]:>5} |')
-        print(separator)
 percent_table(word_percents)
 
 """
