@@ -204,7 +204,7 @@ for word in word_percents:
 pprint.pprint(word_counts)
 
 
-"""
+
 #PLOT DEFINER
 terms = list(word_percents.keys())
 percents = list(word_percents.values())
@@ -214,7 +214,7 @@ sorted_percents = []
 for term in sorted(terms):
     sorted_terms.append(term)
     sorted_percents.append(word_percents[term])
-"""
+
 
 
 #TABLE MAKER
@@ -233,10 +233,9 @@ def percent_table(dict):
         print(f'| {word:<15} | {word_percents[word]:>5} |')
 percent_table(word_percents)
 
-"""
+
 #PLOT MAKER
 import matplotlib.pyplot as plt
 plt.bar(sorted_terms, sorted_percents)
 plt.show()
 plt.savefig('percentgraph.png')
-"""

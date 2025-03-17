@@ -8,3 +8,9 @@
 | maga            | 01.09 |
 | melania         | 00.53 |
 | president       | 07.21 |
+
+This table represents the percentage of Donald Trump's tweets posted between 2009 and 2018 that contain the selected phrases.
+
+Here is the data represented on a bar graph:
+
+![Word Percent Graph][percentgraph.png]
