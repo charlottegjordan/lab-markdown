@@ -13,4 +13,4 @@ This table represents the percentage of Donald Trump's tweets posted between 200
 
 Here is the data represented on a bar graph:
 
-![Word Percent Graph][percentgraph.png]
+![Word Percent Graph](percentgraph.png)
