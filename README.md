@@ -14,3 +14,7 @@ This table represents the percentage of Donald Trump's tweets posted between 200
 Here is the data represented on a bar graph:
 
 ![Word Percent Graph](percentgraph.png)
+
+Analyzing other available data, it seems Trump was most likely to tweet on Wednesday and least likely to tweet on Sunday in 2009-2018:
+
+![Day Posted Graph](daygraph.png)
